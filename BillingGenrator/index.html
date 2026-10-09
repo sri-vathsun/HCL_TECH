@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a simple, professional customer bill.">
+    <title>Billwise | Billing Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="page-header">
+            <div class="brand-mark">B</div>
+            <div>
+                <p class="eyebrow">Simple billing, done right</p>
+                <h1>Billing Generator</h1>
+            </div>
+            <span class="status-pill"><span class="status-dot"></span>Ready to bill</span>
+        </header>
+
+        <form id="billingForm" class="billing-layout">
+            <section class="panel customer-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Step 01</p>
+                        <h2>Customer details</h2>
+                    </div>
+                    <span class="section-icon">01</span>
+                </div>
+                <div class="form-grid">
+                    <label class="field">
+                        <span>Customer name</span>
+                        <input type="text" id="customerName" name="customerName" placeholder="e.g. Alex Morgan" autocomplete="name" required>
+                    </label>
+                    <label class="field">
+                        <span>Email address</span>
+                        <input type="email" id="customerEmail" name="customerEmail" placeholder="alex@example.com" autocomplete="email" required>
+                    </label>
+                </div>
+            </section>
+
+            <section class="panel products-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Step 02</p>
+                        <h2>Select products</h2>
+                    </div>
+                    <span class="selection-count"><strong id="selectedCount">0</strong> selected</span>
+                </div>
+                <div class="product-grid">
+                    <label class="product-card"><input type="checkbox" id="product1" name="products" value="Product 1: 50"><span class="checkmark"></span><span class="product-info"><strong>Product 1</strong><small>Standard service</small></span><span class="price">₹50</span></label>
+                    <label class="product-card"><input type="checkbox" id="product2" name="products" value="Product 2: 100"><span class="checkmark"></span><span class="product-info"><strong>Product 2</strong><small>Standard service</small></span><span class="price">₹100</span></label>
+                    <label class="product-card"><input type="checkbox" id="product3" name="products" value="Product 3: 150"><span class="checkmark"></span><span class="product-info"><strong>Product 3</strong><small>Standard service</small></span><span class="price">₹150</span></label>
+                    <label class="product-card"><input type="checkbox" id="product4" name="products" value="Product 4: 200"><span class="checkmark"></span><span class="product-info"><strong>Product 4</strong><small>Standard service</small></span><span class="price">₹200</span></label>
+                    <label class="product-card"><input type="checkbox" id="product5" name="products" value="Product 5: 250"><span class="checkmark"></span><span class="product-info"><strong>Product 5</strong><small>Standard service</small></span><span class="price">₹250</span></label>
+                    <label class="product-card"><input type="checkbox" id="product6" name="products" value="Product 6: 300"><span class="checkmark"></span><span class="product-info"><strong>Product 6</strong><small>Standard service</small></span><span class="price">₹300</span></label>
+                    <label class="product-card"><input type="checkbox" id="product7" name="products" value="Product 7: 350"><span class="checkmark"></span><span class="product-info"><strong>Product 7</strong><small>Standard service</small></span><span class="price">₹350</span></label>
+                    <label class="product-card"><input type="checkbox" id="product8" name="products" value="Product 8: 400"><span class="checkmark"></span><span class="product-info"><strong>Product 8</strong><small>Standard service</small></span><span class="price">₹400</span></label>
+                </div>
+            </section>
+
+            <aside class="summary-card">
+                <div class="summary-top">
+                    <div>
+                        <p class="section-kicker">Invoice summary</p>
+                        <h2>Review your bill</h2>
+                    </div>
+                    <span class="receipt-icon">▤</span>
+                </div>
+                <div class="summary-row"><span>Selected items</span><strong id="summaryCount">0</strong></div>
+                <div class="summary-divider"></div>
+                <div class="total-row"><span>Total amount</span><strong><span class="currency">₹</span><span id="total">0</span></strong></div>
+                <button type="submit" class="generate-button">Generate bill <span>→</span></button>
+                <p class="secure-note">Your billing details stay in this browser.</p>
+            </aside>
+        </form>
+        <div id="billResult" class="bill-result" aria-live="polite"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

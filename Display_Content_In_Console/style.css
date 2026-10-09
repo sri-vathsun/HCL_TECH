@@ -1,0 +1,16 @@
+#name{
+    margin-bottom:5px;
+}
+#age{
+    margin-bottom:5px;
+
+}
+button:hover{
+    justify-content: center;
+    background-attachment: fixed;
+    background-position-x: center;
+    
+}
+body{
+    justify-content: center;
+}
